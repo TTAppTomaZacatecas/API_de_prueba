@@ -20,8 +20,15 @@ class Post(BaseModel):
 
 @app.get("/")
 def root():
-    return {"welcome": "Bienvenido putito"}
+    return "Hola mundo"
 
+@app.get("/holajson")
+def bienvenida():
+    return {"welcome": "Bienvenido"}
+
+@app.get("/saludo/{mensaje}")
+def get_lol(mensaje: str):
+    return f"Hola!, aqui te estoy saludando ${mensaje}"
 
 @app.get("/posts")
 def get_posts():
